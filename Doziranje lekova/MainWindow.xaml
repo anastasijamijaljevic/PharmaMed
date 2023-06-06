@@ -7,17 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="3*"/>
-            <ColumnDefinition Width="3*"/>
-            <ColumnDefinition Width="3*"/>
-            
-        </Grid.ColumnDefinitions>
+        <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" x:Name="LekoviListBox" SelectionChanged="LekoviListBox_SelectionChanged" DisplayMemberPath="Ime" Margin="0,102,0,-102" />
 
-        <Grid.RowDefinitions>
-            <RowDefinition Height="150"/>
-            <RowDefinition Height="150"/>
-            <RowDefinition Height="200"/>
-        </Grid.RowDefinitions>
     </Grid>
 </Window>

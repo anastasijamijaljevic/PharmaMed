@@ -15,14 +15,35 @@ using System.Windows.Shapes;
 
 namespace Doziranje_lekova
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
+   
     public partial class MainWindow : Window
     {
+
+        private List<Lekovi>  lekovi;
         public MainWindow()
         {
             InitializeComponent();
+
+            lekovi = new List<Lekovi> {
+                new Lekovi ("Omeprazol", "Kapusla" , 20),
+                 new Lekovi ("Nolpaza", "Tableta" , 40),
+                  new Lekovi ("Emanera", "Kapusla" , 20)
+
+
+            };
+
+            LekoviListBox.ItemsSource = lekovi;
+
+        }
+
+        private void LekoviListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (LekoviListBox.SelectedItem is Lekovi izabraniLekovi)
+            {
+                MessageBox.Show($"Izabrani lek je:\n\nIme: {izabraniLekovi.Ime}\nTipLeka Tip:{izabraniLekovi.TipLeka}\nJacinaDoze Jacian{izabraniLekovi.JacinaDoze}");
+            }
+
+
         }
     }
 }
