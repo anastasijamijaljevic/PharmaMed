@@ -6,8 +6,18 @@
         xmlns:local="clr-namespace:Doziranje_lekova"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" x:Name="LekoviListBox" SelectionChanged="LekoviListBox_SelectionChanged" DisplayMemberPath="Ime" Margin="0,102,0,-102" />
 
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition  Height="Auto"/>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Button Content="Dozator Lekova" Grid.Row="2" HorizontalAlignment="Center" Margin="0,286,0,0" Click="BtnIzdati_Click" />
+        <Label Content="Unesite ime ili ID pacijenta:" HorizontalAlignment="Left" Margin="321,14,0,291" Grid.RowSpan="3"/>
+        <TextBox x:Name="txtInput" HorizontalAlignment="Left"  Margin="296,61,0,44" Width="203"/>
+        <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" x:Name="LekoviListBox" SelectionChanged="LekoviListBox_SelectionChanged" DisplayMemberPath="Ime" Margin="0,102,0,-102" />
     </Grid>
+
 </Window>

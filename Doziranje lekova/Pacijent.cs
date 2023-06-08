@@ -8,12 +8,12 @@ namespace Doziranje_lekova
 {
     internal class Pacijent
     {
-        public int Id { get; set; } 
+        public string IdPacijenta { get; set; } 
         public string Ime { get; set; }
 
-        public Pacijent (int id, string ime)
+        public Pacijent (string id, string ime)
         {
-            Id = id;
+            IdPacijenta = id;
             Ime = ime;
         }       
     }
